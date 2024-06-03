@@ -1,0 +1,48 @@
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Adjust the gap as needed */
+  margin: 180px 20px ;
+}
+
+.event-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-image {
+  width: 100%;
+  /* height: auto; */
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-details {
+  padding: 16px;
+}
+
+.event-title {
+  font-size: 1.5em;
+  margin: 0 0 8px;
+}
+
+.event-info {
+  margin: 0 0 4px;
+}
+
+.event-description {
+  margin: 16px 0;
+}
+
+.rsvp-button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+}

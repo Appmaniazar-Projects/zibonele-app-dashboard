@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  background-color: #7c7c7c;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 83%; /* Adjust this value as per your requirement */
+  overflow-y: auto; /* Enable scrolling for content */
+  /* background-color: #555555; */
+  /* height: 150px; */
+  
+}
+
+.container .header{
+  position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #ffffff;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 49px;
+  background-color: #EFC71C;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.add-button i {
+  margin: 0;
+}
+
+
+.logout-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #ff1a1a;
+}

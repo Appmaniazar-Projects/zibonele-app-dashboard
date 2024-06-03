@@ -1,0 +1,8 @@
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 4em; /* Adjust the font size as needed */
+    font-weight: bold;
+}
