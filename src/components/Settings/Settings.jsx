@@ -5,8 +5,8 @@ import { auth, storage, database } from '../../firebaseConfig'; // Import the Fi
 import './Settings.css';
 
 const Settings = () => {
-    const [name, setName] = useState('Anthony Webb');
-    const [email, setEmail] = useState('myemail@address.com');
+    const [name, setName] = useState('Admin');
+    const [email, setEmail] = useState('admini@gmail.com');
     const [password, setPassword] = useState('********');
     const [profilePicture, setProfilePicture] = useState(null);
     const [profilePictureURL, setProfilePictureURL] = useState('');

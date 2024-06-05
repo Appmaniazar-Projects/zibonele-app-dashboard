@@ -1,7 +1,7 @@
 // src/firebaseConfig.js
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get  } from "firebase/database";
+import { getDatabase, ref, get} from "firebase/database";
 import { getAuth } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 
