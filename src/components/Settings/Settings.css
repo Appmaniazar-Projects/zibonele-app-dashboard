@@ -1,15 +1,15 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
-    background-color: #f5f7fa;
+    background-color: #070707;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-}
+} */
 
 .account-settings {
-    background-color: white;
+    /* background-color: rgb(107, 107, 107); */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -17,23 +17,27 @@ body {
     width: 100%;
     text-align: center;
     margin: 180px 0 0 325px;
+    
 }
 
 .account-settings h1 {
     margin-bottom: 0;
+    color: #a7a7a7;
 }
 
 .account-settings p {
-    color: #6c757d;
+    color: #a7a7a7;
     margin: 5px 0 20px 0;
 }
 
 .form-container {
     text-align: left;
+    
 }
 
 .form-group {
     margin-bottom: 20px;
+    
 }
 
 .form-group label {
