@@ -11,10 +11,11 @@ const Login = ({ onLogin }) => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, username, password);
-            
+            // alert("Login successful!!");
             onLogin();
         } catch (error) {
             alert('Login failed: \n' + error.message);
+            console.log(error);
         }
     };
 
