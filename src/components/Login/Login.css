@@ -21,7 +21,7 @@ body, html {
 
 .admin-login-logo {
     width: 159px; /* Adjust the size of the logo */
-    margin-bottom: 2px;
+    /* margin-bottom: 2px; */
 }
 
 .admin-login-title {
@@ -40,7 +40,7 @@ body, html {
 
 .admin-login-button {
     background-color: #FFD700; /* Gold background */
-    color: #000; /* Black text */
+    color: #000000; /* Black text */
     border: none;
     padding: 10px;
     border-radius: 5px;

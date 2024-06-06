@@ -7,7 +7,7 @@ function Sidebar({ setActiveSection, onLogout }) {
     <div className="sidebar">
       <div className="logo">
         <img src="https://zibonelefm.co.za/wp-content/uploads/2023/03/Web-logo-.png" alt="Zibonele Radio Logo" />
-        <h4 className="active">Manage App</h4>
+        <h4 className="active-button">Manage App</h4>
       </div>
       <nav>
         <ul>

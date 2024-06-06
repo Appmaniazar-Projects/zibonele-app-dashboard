@@ -1,6 +1,6 @@
 .sidebar {
     width: 17%;
-    background-color: #303030;
+    background-color: #333333;
     color: white;
     display: flex;
     flex-direction: column;
@@ -51,10 +51,10 @@
     margin-right: 10px;
   }
   
-  .active{
+  .active-button{
     margin-top: 0;
     text-align: center;
-    background-color: #EFC71C;
+    background-color: #ffd000;
     padding: 15px;
     color: rgb(36, 34, 34);
 }
