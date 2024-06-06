@@ -124,7 +124,7 @@ const DjProfiles = ({ isAddModalOpen, setAddModalOpen }) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <label>Name:</label>
+          <label>Name of the show:</label>
         </div>
         <div className="form-group">
           <input
@@ -144,7 +144,7 @@ const DjProfiles = ({ isAddModalOpen, setAddModalOpen }) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <label>Author:</label>
+          <label>Presenter(s):</label>
         </div>
         <div className="form-group">
           <input
@@ -189,7 +189,7 @@ const DjProfiles = ({ isAddModalOpen, setAddModalOpen }) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <label>Name:</label>
+          <label>Name of the show:</label>
         </div>
         <div className="form-group">
           <input
@@ -209,7 +209,7 @@ const DjProfiles = ({ isAddModalOpen, setAddModalOpen }) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <label>Author:</label>
+          <label>Presenter(s)</label>
         </div>
         <div className="form-group">
           <input
