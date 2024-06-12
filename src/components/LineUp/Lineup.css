@@ -28,14 +28,14 @@
 .lineup-content {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Ensure the cards wrap to new rows as necessary */
+    flex-wrap: wrap; 
     margin-top: 20px;
-    width: 80%;
+    /* width: 80%; */
 }
 
 .lineup-day-content {
     display: none;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: center;
 }
