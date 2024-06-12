@@ -20,9 +20,18 @@ header h1 {
     color: white;
   }
   
-  .user-icon img {
-    width: 159px;
-    height: auto;
+  /* .user-icon img {
+    width: 19px;
+    height: 104px;
     border-radius: 50%;
+  } */
+
+  .user-icon img{
+    width: 100px;
+    height: 100px;
+    /* background-color: #e9ecef; */
+    border-radius: 50%;
+    margin-right: 20px;
+    background-size: cover;
   }
   
