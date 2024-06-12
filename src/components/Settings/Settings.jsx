@@ -1,27 +1,26 @@
-import React, { useState, useEffect } from 'react';
+// src/components/Settings/Settings.js
+import React, { useState, useEffect, useContext } from 'react';
 import { updateProfile, updateEmail, updatePassword } from 'firebase/auth';
-import { ref, uploadBytes, getDownloadURL} from 'firebase/storage';
-import { auth, storage, database, get } from '../../firebaseConfig'; // Import the Firebase database module
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { auth, storage, database } from '../../firebaseConfig';
+import { ProfileContext } from '../../ProfileContext'; // Import the context
 import './Settings.css';
 
 const Settings = () => {
-    const [name, setName] = useState('');
+    const { profilePictureURL, setProfilePictureURL, userName, setUserName } = useContext(ProfileContext); // Use the context
+    const [name, setName] = useState(userName);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('********');
     const [profilePicture, setProfilePicture] = useState(null);
-    const [profilePictureURL, setProfilePictureURL] = useState('');
 
     useEffect(() => {
         const user = auth.currentUser;
         if (user) {
-            alert(`User ` + user)
+            setName(user.displayName || '');
+            setEmail(user.email || '');
+            setProfilePictureURL(user.photoURL || '');
         }
-
-        // console.log('Error fetching user data:', user.email);
-
-    }, []);
-    
-    
+    }, [setProfilePictureURL]);
 
     const handleProfilePictureChange = (e) => {
         if (e.target.files[0]) {
@@ -49,6 +48,7 @@ const Settings = () => {
             }
 
             if (name) {
+                setUserName(name);
                 await updateProfile(user, { displayName: name });
                 await database.ref(`users/${user.uid}`).update({ displayName: name });
             }
@@ -117,7 +117,7 @@ const Settings = () => {
                     </div>
 
                     <div className="form-buttons">
-                        <div type="button" className="cancel-button" onClick={handleCancel}>Cancel</div>
+                        {/* <div type="button" className="cancel-button" onClick={handleCancel}>Cancel</div> */}
                         <button type="submit" className="save-button">Save</button>
                     </div>
                 </form>
