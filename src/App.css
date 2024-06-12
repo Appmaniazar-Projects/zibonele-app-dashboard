@@ -124,8 +124,8 @@ form {
   margin: auto;
   padding: 20px;
   border-radius: 10px;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  background-color: #646464;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
 h2 {
@@ -155,7 +155,7 @@ input {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: transparent;
+  /* background-color: transparent; */
   transition: all 0.3s;
 }
 
