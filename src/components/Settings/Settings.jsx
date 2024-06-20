@@ -64,7 +64,7 @@ const Settings = () => {
 
             alert('Profile updated successfully');
         } catch (error) {
-            alert('Error updating profile: ' + error.message);
+            
         }
     };
 
@@ -84,10 +84,6 @@ const Settings = () => {
         }
     };
 
-    const handleDeleteAccount = (e) => {
-        e.preventDefault();
-        // Implement account deletion logic
-    };
 
     const handleCancel = () => {
         window.location.reload();
