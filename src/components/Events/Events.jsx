@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { database, storage } from '../../firebaseConfig';
 import { ref, get, set, update, remove } from 'firebase/database';
 import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
-import DatePicker from 'react-datepicker';
-// import TimePicker from 'react-time-picker';
-import 'react-datepicker/dist/react-datepicker.css';
 import './Events.css';
 
 function Events({ addModalOpen, setAddModalOpen }) {
@@ -79,7 +76,7 @@ function Events({ addModalOpen, setAddModalOpen }) {
   };
 
   const handleImageUpload = async (file) => {
-    const storageReference = storageRef(storage, `Events/${file.name}`);
+    const storageReference = storageRef(storage, `eventPictures/${file.name}`);
     await uploadBytes(storageReference, file);
     const url = await getDownloadURL(storageReference);
     return url;
@@ -91,10 +88,10 @@ function Events({ addModalOpen, setAddModalOpen }) {
     const data = snapshot.val();
   
     // Check if there are any events in the database
-    const eventTitles = data ? Object.keys(data) : [];
-  
+    const eventIds = data ? Object.keys(data) : [];
+    
     // Check if the new event title already exists
-    const eventExists = eventTitles.includes(newEvent.title);
+    const eventExists = eventIds.some(key => data[key].title === newEvent.title);
   
     // If the event already exists, handle it accordingly
     if (eventExists) {
@@ -104,6 +101,8 @@ function Events({ addModalOpen, setAddModalOpen }) {
     }
   
     // If the event does not exist, proceed to add it
+    const newId = newEvent.title;
+  
     let imageUrl = '';
     if (imageFile) {
       imageUrl = await handleImageUpload(imageFile);
@@ -114,10 +113,8 @@ function Events({ addModalOpen, setAddModalOpen }) {
       imageUrl
     };
   
-    // Add the new event to the database using title as ID
-    set(ref(database, `events/${newEvent.title}`), eventToAdd);
+    set(ref(database, `events/${newId}`), eventToAdd);
   
-    // Reset states and close the add modal
     setAddModalOpen(false);
     setNewEvent({
       title: '',
@@ -137,8 +134,8 @@ function Events({ addModalOpen, setAddModalOpen }) {
           <img src={event.imageUrl} alt="Event" className="event-image" />
           <div className="event-details">
             <div className="event-card-controls">
-              <span className="event-edit-button" title='Edit' onClick={() => handleEdit(event)}>✏️</span>
-              <span className="event-delete-button" title='Delete' onClick={() => handleDelete(event)}>🗑️</span>
+              <span className="event-edit-button" onClick={() => handleEdit(event)}>✏️</span>
+              <span className="event-delete-button" onClick={() => handleDelete(event)}>🗑️</span>
             </div>
             <h3 className="event-title">{event.title}</h3>
             <p className="event-info">{event.date}</p>
@@ -237,16 +234,14 @@ function Events({ addModalOpen, setAddModalOpen }) {
                 <label>Title:</label>
               </div>
               <div className="form-group">
-                <DatePicker
-                  selected={newEvent.dateTime}
-                  onChange={(date) => setNewEvent({ ...newEvent, dateTime: date })}
-                  showTimeSelect
-                  timeFormat="HH:mm"
-                  timeIntervals={5}
-                  dateFormat="MMMM d, yyyy h:mm aa"
-                  placeholderText=""
+                <input
+                  type="text"
+                  name="date"
+                  value={newEvent.date}
+                  onChange={handleChange}
+                  placeholder=" "
                 />
-                <label>Date & Time: </label>
+                <label>Date:</label>
               </div>
               <div className="form-group">
                 <input
