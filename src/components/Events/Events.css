@@ -21,6 +21,19 @@
   object-fit: cover;
 }
 
+.lineup-day-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly across the container */
+}
+
+.lineup-card {
+  width: calc(25% - 20px); /* Set the width of each card to occupy 25% of the container width */
+  margin-bottom: 20px; /* Add bottom margin to create space between cards */
+  box-sizing: border-box;
+  padding: 10px; /* Add padding to cards */
+}
+
 .event-details {
   padding: 16px;
 }
